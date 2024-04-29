@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import CurrencyConverter from './CurrencyConverter';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    const numStars = 100; // Nombre d'étoiles
+    const starsContainer = document.querySelector('.stars');
+
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 5}s`;
+      starsContainer.appendChild(star);
+    }
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="stars"></div>
+      <div className="container">
+        <CurrencyConverter />
+      </div>
     </div>
   );
 }
