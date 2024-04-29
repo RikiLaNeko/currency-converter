@@ -46,11 +46,12 @@
   background-color: rgba(255, 255, 255, 0.2);
   padding: 20px;
   border-radius: 5px;
+  font-family: 'Arial', sans-serif;
 }
 
 .converter-box button {
   opacity: 0.8;
-  background-color: transparent;
+  background-color: #1a237e;
   border: none;
   color: white;
   font-size: 16px;
@@ -62,12 +63,13 @@
 
 .converter-box button:hover {
   opacity: 0.8;
+  background-color: #0d47a1;
 }
 
 .converter-box input[type="number"],
 .converter-box select {
   opacity: 0.8;
-  background-color: transparent;
+  background-color: #1a237e;
   border: none;
   color: white;
   font-size: 16px;
@@ -89,4 +91,3 @@
   background-color: rgba(51, 79, 158, 0.5);
   color: white;
 }
-

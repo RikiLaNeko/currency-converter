@@ -25,7 +25,7 @@ const CurrencyConverter = () => {
     const response = await axios.get(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`);
     const { rates } = response.data;
     const conversionRate = rates[toCurrency];
-    const convertedValue = amount * conversionRate;
+    const convertedValue = (amount * conversionRate).toFixed(2);
     setConvertedAmount(convertedValue);
   };
 
@@ -52,7 +52,7 @@ const CurrencyConverter = () => {
           ))}
         </select>
       </div>
-      <button onClick={convertCurrency}>Convert</button>
+      <button className="convert-button" onClick={convertCurrency}>Convert</button>
       <div>
         <label>Converted Amount:</label>
         <span>{convertedAmount}</span>
