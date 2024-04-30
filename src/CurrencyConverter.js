@@ -4,8 +4,8 @@ import axios from 'axios';
 const CurrencyConverter = () => {
   const [currencies, setCurrencies] = useState([]);
   const [amount, setAmount] = useState(0);
-  const [fromCurrency, setFromCurrency] = useState('');
-  const [toCurrency, setToCurrency] = useState('');
+  const [fromCurrency, setFromCurrency] = useState('EUR');
+  const [toCurrency, setToCurrency] = useState('USD');
   const [convertedAmount, setConvertedAmount] = useState(0);
 
   useEffect(() => {
@@ -14,14 +14,17 @@ const CurrencyConverter = () => {
       const { rates } = response.data;
       const currencyList = Object.keys(rates);
       setCurrencies(currencyList);
-      setFromCurrency('EUR');
-      setToCurrency(currencyList[0]);
     };
 
     fetchCurrencies();
   }, []);
 
   const convertCurrency = async () => {
+    if (fromCurrency === toCurrency) {
+      alert('Please select different currencies for conversion.');
+      return;
+    }
+
     const response = await axios.get(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`);
     const { rates } = response.data;
     const conversionRate = rates[toCurrency];
@@ -47,7 +50,7 @@ const CurrencyConverter = () => {
       <div>
         <label>To Currency:</label>
         <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
-          {currencies.map((currency) => (
+          {currencies.filter((currency) => currency !== fromCurrency).map((currency) => (
             <option key={currency} value={currency}>{currency}</option>
           ))}
         </select>
