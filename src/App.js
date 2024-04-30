@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   useEffect(() => {
-    const numStars = Math.floor(Math.random() * 201); // Nombre d'étoiles random entre 0 et 200
+    const numStars = Math.floor(Math.random() * 101) + 100; // Nombre d'étoiles random entre 100 et 200
     const starsContainer = document.querySelector('.stars');
 
     for (let i = 0; i < numStars; i++) {
