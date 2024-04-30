@@ -57,7 +57,7 @@ const CurrencyConverter = () => {
       </div>
       <button className="convert-button" onClick={convertCurrency}>Convert</button>
       <div>
-        <label>Converted Amount::</label>
+        <label>Converted Amount:</label>
         <span>{convertedAmount}</span>
       </div>
     </div>
