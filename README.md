@@ -19,7 +19,7 @@ This is a real-time currency converter application built with React. It uses the
 
 To get started with the Currency Converter App, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/RikiLaNeko/currency-converter-app.git`
+1. Clone the repository: `git clone https://github.com/RikiLaNeko/currency-converter.git`
 2. Navigate to the project directory: `cd currency-converter-app`
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm start`
